@@ -1,0 +1,28 @@
+/control/verbose 2
+/run/verbose 2
+
+/random/setSeeds 10012 10012
+
+/testem/phys/addPhysics standard_opt0
+
+/run/initialize
+
+/testem/phys/crossSectionFactor 1000
+
+/process/eLoss/fluct true
+/process/eLoss/StepFunction 0.9 10 um
+/testem/stepMax 1 km
+
+# Additional options
+
+/analysis/setFileName fanocavity
+/analysis/h1/set 1 120 -6 6 mm
+/analysis/h1/set 6 100  0  100 deg
+/analysis/h1/set 7 100  0  100 deg
+/analysis/h1/set 8 100  0  1 mm    #step size in wall
+
+/run/printProgress 500000
+
+/run/beamOn 100000
+
+

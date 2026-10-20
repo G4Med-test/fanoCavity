@@ -26,10 +26,20 @@ coefficient.
 ## Import notes
 
 - `main.cc`, `include/`, `src/` come from `fanoCavity.cc`/`include`/`src`.
-- `macro/` contains the 3 macros found directly in that source tree.
-- `validation/parser.py` is copied unmodified from
-  `geant-config-generator/tests/geant4/fanoCavity/parser.py` (plus the
-  minimal `gts` package it depends on, vendored under `validation/gts/`).
+- `macro/` contains the 3 macros found directly in the source tree
+  (`basic.mac`, `run01.mac`, `vis.mac`, kept for reference but not listed in
+  `validation/config.json`), plus 14 concrete, self-contained
+  `standard_opt0_ROVER_<value>.mac` macros generated from
+  `geant-config-generator/tests/geant4/fanoCavity/template.conf` +
+  `params.conf` — these are the ones actually run by CI.
+- `validation/parser.py` was **rewritten** for the `metadata()`/`parse()`
+  module API that `ci-workflows/validation/export.py` actually calls (the
+  first version, copied unmodified from
+  `geant-config-generator/tests/geant4/fanoCavity/parser.py`, used the old
+  `gts.BaseParser` class API and made CI fail with
+  `AttributeError: module 'validation_parser' has no attribute 'metadata'`).
+  See `validation/README.md` for what changed and why. The vendored `gts`
+  package is no longer needed and was removed.
 - A related variant, **`fanoCavity2`**, also exists in both source
   repositories (1.0 MeV mono-energetic **electron** source instead of
   1.25 MeV gamma, using a reciprocity-theorem approach per Sempau & Andreo

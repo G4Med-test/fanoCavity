@@ -1,7 +1,18 @@
 {
   "macros": [
-    "basic.mac",
-    "run01.mac",
-    "vis.mac"
+    "standard_opt0_ROVER_0.01.mac",
+    "standard_opt0_ROVER_0.03.mac",
+    "standard_opt0_ROVER_0.05.mac",
+    "standard_opt0_ROVER_0.07.mac",
+    "standard_opt0_ROVER_0.1.mac",
+    "standard_opt0_ROVER_0.2.mac",
+    "standard_opt0_ROVER_0.3.mac",
+    "standard_opt0_ROVER_0.4.mac",
+    "standard_opt0_ROVER_0.5.mac",
+    "standard_opt0_ROVER_0.6.mac",
+    "standard_opt0_ROVER_0.7.mac",
+    "standard_opt0_ROVER_0.8.mac",
+    "standard_opt0_ROVER_0.9.mac",
+    "standard_opt0_ROVER_1.0.mac"
   ]
 }
